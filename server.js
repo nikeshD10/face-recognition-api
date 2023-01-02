@@ -10,21 +10,15 @@ const image = require("./controllers/image");
 
 const db = knex({
   client: "pg",
-  connection: {
-    postgresql:
-      "postgres:T2bcCdTYNJ3wHhg5vBu3@containers-us-west-46.railway.app:6532/railway",
-  },
+  connection:
+    // postgresql:
+    "postgres:T2bcCdTYNJ3wHhg5vBu3@containers-us-west-46.railway.app:6532/railway",
   // host: "127.0.0.1",
 
   // user: "postgres",
   // password: "postgres",
   // database: "smart-brain",
 });
-// const db = knex({
-//   client: "pg",
-//   connection:
-//     "postgresql://postgres:T2bcCdTYNJ3wHhg5vBu3@containers-us-west-46.railway.app:6532/railway",
-// });
 
 const PORT = process.env.PORT || 3000;
 const app = express();
