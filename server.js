@@ -33,6 +33,10 @@ app.listen(PORT, () => {
   console.log(`app is running on port ${PORT}`);
 });
 
+app.get("/", (req, res) => {
+  res.send("Hello, World!");
+});
+
 app.post("/signin", (req, res) => {
   signin.handleSignIn(req, res, db, bcrypt);
 });
