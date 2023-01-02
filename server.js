@@ -8,10 +8,16 @@ const signin = require("./controllers/signin");
 const profile = require("./controllers/profile");
 const image = require("./controllers/image");
 
+const username = process.env.PGUSER;
+const PORT = process.env.PGPORT || 3000;
+const host = process.env.PGHOST;
+const password = process.env.PGPASSWORD;
+const database = process.env.PGDATABASE;
+const database_url = process.env.DATABASE_URL;
+
 const db = knex({
   client: "pg",
   connection:
-    // postgresql:
     "postgres:T2bcCdTYNJ3wHhg5vBu3@containers-us-west-46.railway.app:6532/railway",
   // host: "127.0.0.1",
 
@@ -20,7 +26,25 @@ const db = knex({
   // database: "smart-brain",
 });
 
-const PORT = process.env.PORT || 3000;
+// const db = knex({
+//   client: database,
+//   connection:{
+//     host : host,
+//     port : PORT,
+//     user : username,
+//     password : password,
+//     database : database,
+//     socketPath  : database_url,
+//   }
+
+// postgresql:
+// host: "127.0.0.1",
+
+// user: "postgres",
+// password: "postgres",
+// database: "smart-brain",
+// });
+
 const app = express();
 app.use(bodyParser.json());
 app.use(cors());
