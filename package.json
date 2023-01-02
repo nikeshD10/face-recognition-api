@@ -2,7 +2,7 @@
   "name": "smart-brain-api",
   "version": "1.0.0",
   "description": "",
-  "main": "script.js",
+  "main": "index.js",
   "dependencies": {
     "bcrypt": "^5.1.0",
     "body-parser": "^1.20.1",
