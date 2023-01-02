@@ -17,8 +17,8 @@ const db = knex({
 });
 
 const app = express();
-app.use(bodyParser.json());
 app.use(cors());
+app.use(bodyParser.json());
 
 app.listen(PORT, () => {
   console.log(`app is running on port ${PORT}`);
