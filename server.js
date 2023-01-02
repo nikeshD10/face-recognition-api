@@ -8,23 +8,33 @@ const signin = require("./controllers/signin");
 const profile = require("./controllers/profile");
 const image = require("./controllers/image");
 
+// const db = knex({
+//   client: "pg",
+//   connection: {
+//     host: "face-recognition-api.up.railway.app",
+//     user: "postgres",
+//     password: "T2bcCdTYNJ3wHhg5vBu3",
+//     database: "railway",
+//     port: 6532,
+//   },
+// });
 const db = knex({
   client: "pg",
-  connection: {
-    host: "face-recognition-api.up.railway.app",
-    user: "postgres",
-    password: "T2bcCdTYNJ3wHhg5vBu3",
-    database: "railway",
-    port: 6532,
-  },
+  connection:
+    "postgresql://postgres:T2bcCdTYNJ3wHhg5vBu3@containers-us-west-46.railway.app:6532/railway",
 });
 
+const PORT = process.env.PORT || 3000;
 const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
-app.listen(process.env.PORT || 6532, () => {
-  console.log(`app is running on port ${process.env.PORT}`);
+app.listen(PORT, () => {
+  console.log(`app is running on port ${PORT}`);
+});
+
+app.get("/", (req, res) => {
+  res.send("Hello, World!");
 });
 
 app.post("/signin", (req, res) => {
