@@ -11,10 +11,11 @@ const image = require("./controllers/image");
 const db = knex({
   client: "pg",
   connection: {
-    host: "127.0.0.1",
+    host: "containers-us-west-46.railway.app",
     user: "postgres",
-    password: "postgres",
-    database: "smart-brain",
+    password: "T2bcCdTYNJ3wHhg5vBu3",
+    database: "railway",
+    port: 6532,
   },
 });
 
@@ -22,8 +23,8 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
-app.listen(3000, () => {
-  console.log("app is running on port 3000");
+app.listen(process.env.PORT || 3000, () => {
+  console.log(`app is running on port ${process.env.PORT}`);
 });
 
 app.post("/signin", (req, res) => {
