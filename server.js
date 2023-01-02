@@ -11,7 +11,7 @@ const image = require("./controllers/image");
 const db = knex({
   client: "pg",
   connection: {
-    host: "containers-us-west-46.railway.app",
+    host: "face-recognition-api.up.railway.app",
     user: "postgres",
     password: "T2bcCdTYNJ3wHhg5vBu3",
     database: "railway",
