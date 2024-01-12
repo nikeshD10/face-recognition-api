@@ -7,6 +7,7 @@ const register = require("./controllers/register");
 const signin = require("./controllers/signin");
 const profile = require("./controllers/profile");
 const image = require("./controllers/image");
+require("dotenv").config();
 
 const PORT = process.env.PGPORT || 3000;
 const database_url = process.env.DATABASE_URL;
